@@ -1,7 +1,7 @@
-var sound0 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'], buffer:true});
-var sound1 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'], buffer:true});
-var sound2 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'], buffer:true});
-var sound3 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'], buffer:true});
+var sound0 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var sound1 =new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var sound2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var sound3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 var soundArr = [
     sound0,
     sound1,
@@ -16,9 +16,17 @@ var inStrictMode = false;
 var sequence = [];
 var nextIndex;
 $(".playBtn").click(function(){
+    for(var i = 0; i < soundArr.length; i++){
+        soundArr[i].volume = 0.01;
+        soundArr[i].play();
+        soundArr[i].pause();
+        soundArr[i].volume = 1;
+    }
     var btnNumber = this.id.slice(-1);
     btnNumber = Number(btnNumber)
     if(!isReplaying){
+        soundArr[btnNumber].pause();
+        soundArr[btnNumber].currentTime = 0;
         soundArr[btnNumber].play();
         if(btnNumber === sequence[nextIndex]){
             console.log("correct");
@@ -94,6 +102,8 @@ function replaySeq(){
             console.log(sequence);
             console.log("playing sound at index " + index);
             triggerClickAnim(sequence[index]);
+            soundArr[sequence[index]].pause();
+            soundArr[sequence[index]].currentTime = 0
             soundArr[sequence[index]].play();
             index++;
         }
