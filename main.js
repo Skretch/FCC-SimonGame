@@ -18,7 +18,7 @@ $(".playBtn").click(function(){
         soundArr[btnNumber].play();
         if(btnNumber === sequence[nextIndex]){
             console.log("correct");
-            if(nextIndex >= 4){
+            if(nextIndex >= 19){
                 hasWon = true;
                 resetGame();
                 winScreen(true);
