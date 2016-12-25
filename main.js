@@ -1,8 +1,12 @@
+var sound0 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'], buffer:true});
+var sound1 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'], buffer:true});
+var sound2 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'], buffer:true});
+var sound3 = new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'], buffer:true});
 var soundArr = [
-    new Howl({ src:['https://s3.amazonaws.com/freecodecamp/simonSound1.mp3']}),
-    new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound2.mp3']}),
-    new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound3.mp3']}),
-    new Howl({src:['https://s3.amazonaws.com/freecodecamp/simonSound4.mp3']})
+    sound0,
+    sound1,
+    sound2,
+    sound3
 ];
 var isRunning = false;
 var isReplaying = false;
@@ -33,6 +37,12 @@ $(".playBtn").click(function(){
             if(inStrictMode){
                 resetGame();
                 looseScreen(true);
+            }else{
+                isReplaying = true;
+                $("body").css("background-color", "rgba(255,0,0,0.7)");
+                setTimeout(function(){
+                    replaySeq();
+                },500);
             }
         }
     }
@@ -68,7 +78,9 @@ $("#startBtn").click(function(){
 function replaySeq(){
     isReplaying = true;
     var index = 0;
-    sequence.push(getRandomInt(0,4));
+    if(!isGettingInput){
+        sequence.push(getRandomInt(0,4));
+    }
     $("#display div").text("Score: " + sequence.length);
     var replay = setInterval(function(){
         if(index >= sequence.length || !isReplaying){
@@ -78,13 +90,14 @@ function replaySeq(){
             nextIndex = 0;
             clearInterval(replay);
         }else{
+            $("body").css("background-color", "grey");
             console.log(sequence);
             console.log("playing sound at index " + index);
             triggerClickAnim(sequence[index]);
             soundArr[sequence[index]].play();
             index++;
         }
-    },250);
+    },500);
 }
 function triggerClickAnim(button){
     $("#mainBtn-" + button).addClass("activeBtn" +button);
