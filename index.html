@@ -1,15 +1,41 @@
-
-<pageTitle>Simon Game</pageTitle><!DOCTYPE 5>
+<!DOCTYPE 5>
 <html lang="en">
   <head>
-    <title>= pageTitle</title>
-    <script>
-      <console class="log" OMFG="OMFG"></console>
-    </script>
+    <title>Simon Game</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="styles.css"/>
   </head>
   <body>
     <div class="container">
-      <h1>Hello There is this working?</h1>
+      <div class="playboard">
+        <div class="playBtn" id="mainBtn-0"></div>
+        <div class="playBtn" id="mainBtn-1"></div>
+        <div class="playBtn" id="mainBtn-2"></div>
+        <div class="playBtn" id="mainBtn-3"></div>
+      </div>
+      <div class="menu-items">
+        <div class="menuBtn" id="resetBtn">
+          <p>Reset</p>
+        </div>
+        <div class="menuBtn" id="strictBtn">
+          <p>Strict</p>
+        </div>
+        <div class="menuBtn" id="display">
+          <div>Score:</div>
+        </div>
+        <div class="menuBtn" id="startBtn">
+          <p>Start</p>
+        </div>
+      </div>
+      <div id="winScreen">
+        <h1>You Won!</h1>
+      </div>
+      <div id="looseScreen">
+        <h1>You Lost!</h1>
+      </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.core.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,10 +1,31 @@
-pageTitle="Simon Game"
+- var pageTitle="Simon Game"
 doctype 5
 html(lang="en")
     head
-        title = pageTitle
-        script
-            console.log("OMFG")
+        title #{pageTitle}
+        meta(name="viewport" content="width=device-width")
+        link(rel="stylesheet", href="styles.css")
     body
         div.container
-            h1 Hello There is this working?
+            .playboard
+                #mainBtn-0.playBtn
+                #mainBtn-1.playBtn
+                #mainBtn-2.playBtn
+                #mainBtn-3.playBtn
+            
+            .menu-items
+                #resetBtn.menuBtn
+                    p Reset
+                #strictBtn.menuBtn
+                    p Strict
+                #display.menuBtn
+                    div Score:
+                #startBtn.menuBtn
+                    p Start
+            #winScreen
+                h1 You Won!
+            #looseScreen
+                h1 You Lost!
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.core.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+        script(src="main.js")

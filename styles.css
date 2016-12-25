@@ -1,10 +1,149 @@
-container {
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: grey;
+  font-size: 16px; }
+
+.container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  height: 98vh; }
+  .container #winScreen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 100%;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .container #looseScreen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 100%;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .container .playboard {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 250px;
+    margin-top: 30vh;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .container .playboard .playBtn {
+      width: 100px;
+      height: 100px;
+      margin: 5px; }
+    .container .playboard #mainBtn-0 {
+      background-color: green;
+      border-top-left-radius: 100%; }
+      .container .playboard #mainBtn-0:active {
+        background: radial-gradient(70% 70%, white, green); }
+    .container .playboard #mainBtn-1 {
+      background-color: red;
+      border-top-right-radius: 100%; }
+      .container .playboard #mainBtn-1:active {
+        background: radial-gradient(70% 70%, white, red); }
+    .container .playboard #mainBtn-2 {
+      background-color: orange;
+      border-bottom-left-radius: 100%; }
+      .container .playboard #mainBtn-2:active {
+        background: radial-gradient(70% 70%, white, orange); }
+    .container .playboard #mainBtn-3 {
+      background-color: blue;
+      border-bottom-right-radius: 100%; }
+      .container .playboard #mainBtn-3:active {
+        background: radial-gradient(70% 70%, white, blue); }
+  .container .activeBtn0 {
+    background: radial-gradient(70% 70%, white, green); }
+  .container .activeBtn1 {
+    background: radial-gradient(70% 70%, white, red); }
+  .container .activeBtn2 {
+    background: radial-gradient(70% 70%, white, orange); }
+  .container .activeBtn3 {
+    background: radial-gradient(70% 70%, white, blue); }
+  .container .menu-items {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .container .menu-items .menuBtn {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 50px;
+      width: 20%;
+      margin: 5px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      background-color: #787878;
+      box-shadow: 3px 4px 3px black;
+      font-size: 1.7em; }
+      .container .menu-items .menuBtn:active {
+        box-shadow: none;
+        -webkit-transform: translate(3px, 3px);
+        -ms-transform: translate(3px, 3px);
+        transform: translate(3px, 3px); }
+    .container .menu-items #display {
+      padding: 5px; }
+      .container .menu-items #display div {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 0.8em;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding: 5px;
+        color: green;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); }

@@ -1,4 +1,118 @@
-container
+*
+    box-sizing: border-box
+body
+    padding: 0
+    margin: 0
+    background-color: grey
+    font-size: 16px
+
+.container
     display: flex
-    justify-content: center
+    flex-direction: column
+    justify-content: space-between
     align-items: center
+    height: 98vh
+    #winScreen
+        display: none
+        position: absolute
+        top: 50%
+        transform: translate(0,-50%)
+
+        width: 100%
+
+        font-size: 3em
+        color: white
+        text-align: center
+        background-color: rgba(0,0,0,0.5)
+    #looseScreen
+        display: none
+        position: absolute
+        top: 50%
+        transform: translate(0,-50%)
+
+        width: 100%
+
+        font-size: 3em
+        color: white
+        text-align: center
+        background-color: rgba(0,0,0,0.5)
+
+    .playboard
+        display: flex
+        align-self: center
+        justify-content: center
+        width: 250px
+        margin-top: 30vh
+        flex-wrap: wrap
+        .playBtn
+            width: 100px
+            height: 100px
+            margin: 5px
+
+        #mainBtn-0
+            background-color: green
+            border-top-left-radius: 100%
+            &:active
+                background: radial-gradient(70% 70%,white,green)
+        #mainBtn-1
+            background-color: red
+            border-top-right-radius: 100%
+            &:active
+                background: radial-gradient(70% 70%,white,red)
+        #mainBtn-2
+            background-color: orange
+            border-bottom-left-radius: 100%
+            &:active
+                background: radial-gradient(70% 70%,white,orange)
+        #mainBtn-3
+            background-color: blue
+            border-bottom-right-radius: 100%
+            &:active
+                background: radial-gradient(70% 70%,white,blue)
+    .activeBtn0
+        background: radial-gradient(70% 70%,white,green)
+    .activeBtn1
+        background: radial-gradient(70% 70%,white,red)
+    .activeBtn2
+        background: radial-gradient(70% 70%,white,orange)
+    .activeBtn3
+        background: radial-gradient(70% 70%,white,blue)
+    .menu-items
+        display: flex
+        width: 100%
+
+        justify-content: center
+        align-items: center
+
+        .menuBtn
+            display: flex
+
+            justify-content: center
+            align-items: center
+
+            height: 50px
+            width: 20%
+            margin: 5px
+
+            user-select: none
+            cursor: default
+
+            background-color: rgb(120,120,120)
+            box-shadow: 3px 4px 3px black
+
+            font-size: 1.7em
+            &:active
+                box-shadow: none
+                transform: translate(3px,3px)
+        #display
+            padding: 5px
+            div
+                display: flex
+                font-size: 0.8em
+                align-items: center
+                justify-content: flex-start
+                padding: 5px
+                color: green
+                width: 100%
+                height: 100%
+                background-color : rgba(0,0,0,0.5)
